@@ -7,7 +7,8 @@
     "build": "tsc",
     "start": "node dist/index.js",
     "dev": "ts-node-dev --respawn --transpile-only src/index.ts",
-    "test": "jest"
+    "test": "jest",
+    "vercel-build": "npm run build"
   },
   "keywords": [
     "express",
@@ -15,7 +16,7 @@
     "crud",
     "backend"
   ],
-  "author": "Code Challenge Applicant",
+  "author": "HTD2k1",
   "license": "MIT",
   "dependencies": {
     "@types/swagger-jsdoc": "^6.0.4",

@@ -61,6 +61,12 @@ jspm_packages/
 .env.test
 .env.production
 .env.local
+.env.development
+.env.staging
+# Also ignore non-dot env files
+env.development
+env.staging
+env.production
 
 # parcel-bundler cache
 .cache
