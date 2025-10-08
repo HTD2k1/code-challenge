@@ -10,10 +10,14 @@ const startServer = async (): Promise<void> => {
 
     // Start server
     const server = app.listen(config.port, () => {
-      console.log(`Server running on port ${config.port}`);
+      const host = server.address();
+      const hostname = typeof host === 'string' ? host : host?.address || 'localhost';
+      const port = typeof host === 'object' ? host?.port : config.port;
+      
+      console.log(`Server running on port ${port}`);
       console.log(`Environment: ${config.nodeEnv}`);
-      console.log(`Health check: http://localhost:${config.port}/health`);
-      console.log(`Users API: http://localhost:${config.port}/api/users`);
+      console.log(`Health check: http://${hostname}:${port}/health`);
+      console.log(`Users API: http://${hostname}:${port}/api/users`);
     });
 
     // Graceful shutdown
