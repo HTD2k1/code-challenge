@@ -14,6 +14,7 @@ A robust backend server built with ExpressJS and TypeScript, featuring a clean a
 - **Database**: SQLite for data persistence
 - **Security**: Helmet for security headers, CORS support
 - **Logging**: Morgan for HTTP request logging
+- **API Documentation**: Interactive Swagger UI for testing endpoints
 
 ## 📁 Project Structure
 
@@ -34,6 +35,8 @@ src/
 │   └── ApiResponse.ts
 ├── validation/         # Input validation schemas
 │   └── userValidation.ts
+├── swagger/            # API documentation
+│   └── swaggerConfig.ts
 ├── app.ts              # Express application setup
 └── index.ts            # Server entry point
 ```
@@ -73,7 +76,32 @@ src/
 
 The server will start on `http://localhost:3000` by default.
 
-## 📚 API Documentation
+## 📖 API Documentation
+
+### Swagger UI
+
+The API includes interactive documentation powered by Swagger UI. You can view and test all endpoints through a web interface.
+
+**Access the documentation:**
+- **URL**: `http://localhost:3000/api-docs/`
+- **Features**:
+  - Interactive endpoint testing
+  - Request/response examples
+  - Schema definitions
+  - Try-it-out functionality
+
+### Available Endpoints
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| `GET` | `/health` | Health check |
+| `GET` | `/api/users` | Get all users (with filtering) |
+| `GET` | `/api/users/:id` | Get user by ID |
+| `POST` | `/api/users` | Create new user |
+| `PATCH` | `/api/users/:id` | Update user (partial) |
+| `DELETE` | `/api/users/:id` | Delete user |
+
+## 📚 API Reference
 
 ### Base URL
 ```
@@ -233,6 +261,16 @@ DB_PATH=./database.sqlite
 
 ## 🧪 Testing the API
 
+### Using Swagger UI (Recommended)
+
+The easiest way to test the API is through the interactive Swagger UI:
+
+1. **Start the server**: `npm run dev`
+2. **Open Swagger UI**: Navigate to `http://localhost:3000/api-docs/`
+3. **Test endpoints**: Click on any endpoint to expand it, then click "Try it out"
+4. **Fill parameters**: Enter the required data and click "Execute"
+5. **View results**: See the response directly in the interface
+
 ### Using curl
 
 1. **Create a user:**
@@ -304,6 +342,12 @@ Import the following collection or manually test the endpoints:
 - **Input Validation**: Comprehensive validation using Zod
 - **SQL Injection Protection**: Parameterized queries
 - **Error Handling**: Secure error messages in production
+
+## 🔗 Quick Links
+
+- **API Documentation**: [http://localhost:3000/api-docs/](http://localhost:3000/api-docs/)
+- **Health Check**: [http://localhost:3000/health](http://localhost:3000/health)
+- **Users API**: [http://localhost:3000/api/users](http://localhost:3000/api/users)
 
 ## 📝 Development
 
