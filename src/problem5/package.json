@@ -4,10 +4,13 @@
   "description": "ExpressJS TypeScript backend with CRUD operations",
   "main": "dist/index.js",
   "scripts": {
+    "clean": "rm -rf dist",
+    "prebuild": "npm run clean",
     "build": "tsc",
     "start": "node dist/index.js",
     "dev": "ts-node-dev --respawn --transpile-only src/index.ts",
-    "test": "jest"
+    "test": "jest",
+    "rebuild": "npm run clean && npm run build"
   },
   "keywords": [
     "express",
