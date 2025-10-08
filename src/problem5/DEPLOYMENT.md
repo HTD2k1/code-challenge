@@ -13,7 +13,7 @@ This guide will help you deploy your ExpressJS TypeScript CRUD API to Vercel.
 ### 1. Prepare Your Repository
 
 Make sure your code is pushed to GitHub with the following files:
-- `vercel.json` ✅
+- `api/index.js` ✅ (Vercel API route)
 - `package.json` (with vercel-build script) ✅
 - `.vercelignore` ✅
 - `.env.development` ✅ (for local development)
@@ -26,11 +26,12 @@ Make sure your code is pushed to GitHub with the following files:
 2. **Click "New Project"**
 3. **Import your GitHub repository**
 4. **Configure the project:**
-   - Framework Preset: `Other`
+   - Framework Preset: `Other` (or let Vercel auto-detect)
    - Root Directory: `./` (or leave default)
    - Build Command: `npm run build`
    - Output Directory: `dist`
    - Install Command: `npm install`
+   - **Note**: Vercel will auto-detect your API routes in the `api/` folder
 
 5. **Set Environment Variables:**
    - Go to Project Settings → Environment Variables
