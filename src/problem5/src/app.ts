@@ -53,7 +53,7 @@ app.use(express.urlencoded({ extended: true, limit: '10mb' }));
  *                   example: "development"
  */
 // Health check endpoint
-app.get('/health', (req, res) => {
+app.get('/health', (_req, res) => {
   res.status(200).json({
     success: true,
     message: 'Server is running',
@@ -82,7 +82,7 @@ app.use('*', (req, res) => {
 });
 
 // Global error handler
-app.use((err: Error, req: express.Request, res: express.Response, next: express.NextFunction) => {
+app.use((err: Error, _req: express.Request, res: express.Response, _next: express.NextFunction) => {
   console.error('Global error handler:', err);
   
   res.status(500).json({
