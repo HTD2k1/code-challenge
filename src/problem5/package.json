@@ -4,7 +4,8 @@
   "description": "ExpressJS TypeScript backend with CRUD operations",
   "main": "dist/index.js",
   "scripts": {
-    "build": "tsc",
+    "prebuild": "npm install",
+    "build": "npx tsc",
     "start": "node dist/index.js",
     "dev": "ts-node-dev --respawn --transpile-only src/index.ts",
     "test": "jest",
