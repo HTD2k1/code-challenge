@@ -3,9 +3,11 @@ import { config } from '../config';
 
 // Determine the base URL based on environment
 const getBaseUrl = () => {
-  if (config.isVercel && config.vercelUrl) {
-    return `https://${config.vercelUrl}`;
+  // Railway deployment
+  if (process.env.RAILWAY_PUBLIC_DOMAIN) {
+    return `https://${process.env.RAILWAY_PUBLIC_DOMAIN}`;
   }
+  // Development
   return `http://localhost:${config.port}`;
 };
 
