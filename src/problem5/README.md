@@ -1,6 +1,6 @@
 # ExpressJS TypeScript CRUD Backend
 
-A robust backend server built with ExpressJS and TypeScript, featuring a clean architecture with controller + services + repositories pattern. This application provides a complete CRUD interface for managing users with data persistence using SQLite.
+Problem 5: A backend server built with ExpressJS and TypeScript, featuring a clean architecture with controller + services + repositories pattern. This application provides a complete CRUD interface for managing users with data persistence using SQLite.
 
 ## 🚀 Features
 
@@ -15,6 +15,18 @@ A robust backend server built with ExpressJS and TypeScript, featuring a clean a
 - **Security**: Helmet for security headers, CORS support
 - **Logging**: Morgan for HTTP request logging
 - **API Documentation**: Interactive Swagger UI for testing endpoints
+
+## 🎯 Quick Start - Live Demo
+
+**Want to see it in action? Try the live API right now!**
+
+| 🔗 Link | 📝 Description |
+|---------|----------------|
+| [**API Documentation**](https://code-challenge-production.up.railway.app/api-docs/) | Interactive Swagger UI - test all endpoints |
+| [**Health Check**](https://code-challenge-production.up.railway.app/health) | Verify the API is running |
+| [**Users API**](https://code-challenge-production.up.railway.app/api/users) | Direct access to users endpoint |
+
+**💡 Pro Tip**: Start with the API Documentation link to explore all features interactively!
 
 ## 📁 Project Structure
 
@@ -83,12 +95,15 @@ The server will start on `http://localhost:3000` by default.
 The API includes interactive documentation powered by Swagger UI. You can view and test all endpoints through a web interface.
 
 **Access the documentation:**
-- **URL**: `http://localhost:3000/api-docs/`
-- **Features**:
-  - Interactive endpoint testing
-  - Request/response examples
-  - Schema definitions
-  - Try-it-out functionality
+- **Live Demo**: [https://code-challenge-production.up.railway.app/api-docs/](https://code-challenge-production.up.railway.app/api-docs/)
+- **Local Development**: `http://localhost:3000/api-docs/`
+
+**Features:**
+- Interactive endpoint testing
+- Request/response examples
+- Schema definitions
+- Try-it-out functionality
+- Real-time API testing
 
 ### Available Endpoints
 
@@ -265,6 +280,13 @@ DB_PATH=./database.sqlite
 
 The easiest way to test the API is through the interactive Swagger UI:
 
+**Option 1: Live Demo (No setup required)**
+1. **Open Live Demo**: Navigate to [https://code-challenge-production.up.railway.app/api-docs/](https://code-challenge-production.up.railway.app/api-docs/)
+2. **Test endpoints**: Click on any endpoint to expand it, then click "Try it out"
+3. **Fill parameters**: Enter the required data and click "Execute"
+4. **View results**: See the response directly in the interface
+
+**Option 2: Local Development**
 1. **Start the server**: `npm run dev`
 2. **Open Swagger UI**: Navigate to `http://localhost:3000/api-docs/`
 3. **Test endpoints**: Click on any endpoint to expand it, then click "Try it out"
@@ -273,6 +295,37 @@ The easiest way to test the API is through the interactive Swagger UI:
 
 ### Using curl
 
+**Live Demo Examples:**
+1. **Create a user:**
+   ```bash
+   curl -X POST https://code-challenge-production.up.railway.app/api/users \
+     -H "Content-Type: application/json" \
+     -d '{"name":"John Doe","email":"john@example.com","age":30}'
+   ```
+
+2. **Get all users:**
+   ```bash
+   curl https://code-challenge-production.up.railway.app/api/users
+   ```
+
+3. **Get user by ID:**
+   ```bash
+   curl https://code-challenge-production.up.railway.app/api/users/1
+   ```
+
+4. **Update user:**
+   ```bash
+   curl -X PATCH https://code-challenge-production.up.railway.app/api/users/1 \
+     -H "Content-Type: application/json" \
+     -d '{"name":"John Smith","age":31}'
+   ```
+
+5. **Delete user:**
+   ```bash
+   curl -X DELETE https://code-challenge-production.up.railway.app/api/users/1
+   ```
+
+**Local Development Examples:**
 1. **Create a user:**
    ```bash
    curl -X POST http://localhost:3000/api/users \
@@ -345,6 +398,12 @@ Import the following collection or manually test the endpoints:
 
 ## 🔗 Quick Links
 
+### Live Demo (Railway)
+- **API Documentation**: [https://code-challenge-production.up.railway.app/api-docs/](https://code-challenge-production.up.railway.app/api-docs/)
+- **Health Check**: [https://code-challenge-production.up.railway.app/health](https://code-challenge-production.up.railway.app/health)
+- **Users API**: [https://code-challenge-production.up.railway.app/api/users](https://code-challenge-production.up.railway.app/api/users)
+
+### Local Development
 - **API Documentation**: [http://localhost:3000/api-docs/](http://localhost:3000/api-docs/)
 - **Health Check**: [http://localhost:3000/health](http://localhost:3000/health)
 - **Users API**: [http://localhost:3000/api/users](http://localhost:3000/api/users)
