@@ -1,6 +1,14 @@
 import swaggerJsdoc from 'swagger-jsdoc';
 import { config } from '../config';
 
+// Determine the base URL based on environment
+const getBaseUrl = () => {
+  if (config.isVercel && config.vercelUrl) {
+    return `https://${config.vercelUrl}`;
+  }
+  return `http://localhost:${config.port}`;
+};
+
 const options = {
   definition: {
     openapi: '3.0.0',
@@ -19,8 +27,8 @@ const options = {
     },
     servers: [
       {
-        url: `http://localhost:${config.port}`,
-        description: 'Development server',
+        url: getBaseUrl(),
+        description: config.nodeEnv === 'production' ? 'Production server' : 'Development server',
       },
     ],
     components: {
