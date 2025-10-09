@@ -238,7 +238,3 @@ This document provides practical recommendations and improvements for the Expres
 - Set up alerting
 
 ---
-
-**Document Version**: 2.0  
-**Last Updated**: [Current Date]  
-**Next Review**: [Date + 1 month]
