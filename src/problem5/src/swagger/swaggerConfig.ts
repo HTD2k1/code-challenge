@@ -171,7 +171,7 @@ const options = {
             },
           },
         },
-        ApiResponse: {
+        SuccessResponse: {
           type: 'object',
           properties: {
             success: {
@@ -187,6 +187,17 @@ const options = {
               description: 'Success message',
               example: 'User created successfully',
             },
+          },
+          required: ['success'],
+        },
+        ErrorResponse: {
+          type: 'object',
+          properties: {
+            success: {
+              type: 'boolean',
+              description: 'Indicates if the request was successful',
+              example: false,
+            },
             error: {
               type: 'string',
               description: 'Error message',
@@ -201,11 +212,12 @@ const options = {
               example: ['Name must be at least 2 characters long'],
             },
           },
+          required: ['success', 'error'],
         },
         PaginatedResponse: {
           allOf: [
             {
-              $ref: '#/components/schemas/ApiResponse',
+              $ref: '#/components/schemas/SuccessResponse',
             },
             {
               type: 'object',
@@ -244,26 +256,6 @@ const options = {
               },
             },
           ],
-        },
-        ValidationError: {
-          type: 'object',
-          properties: {
-            success: {
-              type: 'boolean',
-              example: false,
-            },
-            error: {
-              type: 'string',
-              example: 'Validation error',
-            },
-            details: {
-              type: 'array',
-              items: {
-                type: 'string',
-              },
-              example: ['Name must be at least 2 characters long', 'Please provide a valid email address'],
-            },
-          },
         },
       },
     },

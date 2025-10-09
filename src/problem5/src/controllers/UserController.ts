@@ -29,7 +29,7 @@ export class UserController {
    *           application/json:
    *             schema:
    *               allOf:
-   *                 - $ref: '#/components/schemas/ApiResponse'
+   *                 - $ref: '#/components/schemas/SuccessResponse'
    *                 - type: object
    *                   properties:
    *                     data:
@@ -39,13 +39,13 @@ export class UserController {
    *         content:
    *           application/json:
    *             schema:
-   *               $ref: '#/components/schemas/ValidationError'
+   *               $ref: '#/components/schemas/ErrorResponse'
    *       500:
    *         description: Internal server error
    *         content:
    *           application/json:
    *             schema:
-   *               $ref: '#/components/schemas/ApiResponse'
+   *               $ref: '#/components/schemas/ErrorResponse'
    */
   createUser = async (req: Request, res: Response): Promise<void> => {
     try {
@@ -96,7 +96,7 @@ export class UserController {
    *           application/json:
    *             schema:
    *               allOf:
-   *                 - $ref: '#/components/schemas/ApiResponse'
+   *                 - $ref: '#/components/schemas/SuccessResponse'
    *                 - type: object
    *                   properties:
    *                     data:
@@ -106,19 +106,19 @@ export class UserController {
    *         content:
    *           application/json:
    *             schema:
-   *               $ref: '#/components/schemas/ApiResponse'
+   *               $ref: '#/components/schemas/ErrorResponse'
    *       404:
    *         description: User not found
    *         content:
    *           application/json:
    *             schema:
-   *               $ref: '#/components/schemas/ApiResponse'
+   *               $ref: '#/components/schemas/ErrorResponse'
    *       500:
    *         description: Internal server error
    *         content:
    *           application/json:
    *             schema:
-   *               $ref: '#/components/schemas/ApiResponse'
+   *               $ref: '#/components/schemas/ErrorResponse'
    */
   getUserById = async (req: Request, res: Response): Promise<void> => {
     try {
@@ -215,7 +215,7 @@ export class UserController {
    *         content:
    *           application/json:
    *             schema:
-   *               $ref: '#/components/schemas/ApiResponse'
+   *               $ref: '#/components/schemas/ErrorResponse'
    */
   getUsers = async (req: Request, res: Response): Promise<void> => {
     try {
@@ -267,7 +267,7 @@ export class UserController {
    *           application/json:
    *             schema:
    *               allOf:
-   *                 - $ref: '#/components/schemas/ApiResponse'
+   *                 - $ref: '#/components/schemas/SuccessResponse'
    *                 - type: object
    *                   properties:
    *                     data:
@@ -283,13 +283,13 @@ export class UserController {
    *         content:
    *           application/json:
    *             schema:
-   *               $ref: '#/components/schemas/ApiResponse'
+   *               $ref: '#/components/schemas/ErrorResponse'
    *       500:
    *         description: Internal server error
    *         content:
    *           application/json:
    *             schema:
-   *               $ref: '#/components/schemas/ApiResponse'
+   *               $ref: '#/components/schemas/ErrorResponse'
    */
   updateUser = async (req: Request, res: Response): Promise<void> => {
     try {
@@ -349,25 +349,25 @@ export class UserController {
    *         content:
    *           application/json:
    *             schema:
-   *               $ref: '#/components/schemas/ApiResponse'
+   *               $ref: '#/components/schemas/SuccessResponse'
    *       400:
    *         description: Invalid user ID
    *         content:
    *           application/json:
    *             schema:
-   *               $ref: '#/components/schemas/ApiResponse'
+   *               $ref: '#/components/schemas/ErrorResponse'
    *       404:
    *         description: User not found
    *         content:
    *           application/json:
    *             schema:
-   *               $ref: '#/components/schemas/ApiResponse'
+   *               $ref: '#/components/schemas/ErrorResponse'
    *       500:
    *         description: Internal server error
    *         content:
    *           application/json:
    *             schema:
-   *               $ref: '#/components/schemas/ApiResponse'
+   *               $ref: '#/components/schemas/ErrorResponse'
    */
   deleteUser = async (req: Request, res: Response): Promise<void> => {
     try {
